@@ -18,6 +18,8 @@ public class TimeStamp {
 
 	private Calendar calendar; 
 	private SimpleDateFormat date;
+	//time when status was created
+	private String createdAt;
 	
 	/*
 	 * Constructor
@@ -50,4 +52,12 @@ public class TimeStamp {
     public String getDayWeekFormat(){
     	return getDate(DAY_WEEK_MONTH_YEAR);
     }
+
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
 }

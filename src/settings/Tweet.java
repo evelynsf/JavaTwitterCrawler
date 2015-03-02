@@ -12,6 +12,7 @@ public class Tweet{
 	private String userScreenName;
 	private TimeStamp timeStamp;
 	private String location;
+	private String timeCreated;
 	
 	public Tweet(){
 		this.setTweet(null);
@@ -31,9 +32,28 @@ public class Tweet{
 		this.setLocation(local);
 	}
 	
+	/*
+	 * Uses the status.createdAt() method 
+	 */
+	public Tweet(String twt, String name, String screenName, String timestamp,
+			String local){
+		
+		this.setTweet(twt);
+		this.setUserName(name);
+		this.setUserScreenName(screenName);
+		this.setTimeCreated(timestamp);
+		this.setLocation(local);
+	}
+	
 	public String toString(){
-		return this.timeStamp.getDayFormatBR() + " " + this.timeStamp.getHourFormat() + " " + this.getLocation() + " "
-				+ this.getUserName() + " " + this.getUserScreenName() + " " + this.getTweet();
+		return 
+				//this.timeStamp.getDayFormatBR() + " " 
+				//+ this.timeStamp.getHourFormat()
+				this.getTimeCreated()
+				+ " " + this.getLocation() + " "
+		+ this.getUserName() + " " 
+		+ this.getUserScreenName() + " " 
+		+ this.getTweet();
 	}
 
 	public String getTweet() {
@@ -67,6 +87,7 @@ public class Tweet{
 	public void setTimeStamp(TimeStamp timeStamp) {
 		this.timeStamp = timeStamp;
 	}
+	
 
 	public String getLocation() {
 		return location;
@@ -74,6 +95,14 @@ public class Tweet{
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getTimeCreated() {
+		return timeCreated;
+	}
+
+	public void setTimeCreated(String timeCreated) {
+		this.timeCreated = timeCreated;
 	}
 	
 	

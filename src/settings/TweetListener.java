@@ -30,9 +30,9 @@ public class TweetListener implements StatusListener {
     
 	public void onStatus(Status status) {
 		
-		time = new TimeStamp();
+		setTime(new TimeStamp());
 		tweet = new Tweet(status.getText(),status.getUser().getName(), status.getUser().getScreenName(), 
-				time, status.getUser().getLocation());
+				status.getCreatedAt().toString(), status.getUser().getLocation());
 
 		try {
 			
@@ -85,6 +85,14 @@ public class TweetListener implements StatusListener {
 	
 	public void incrementContTweets(){
 		this.contTweets++;
+	}
+
+	public TimeStamp getTime() {
+		return time;
+	}
+
+	public void setTime(TimeStamp time) {
+		this.time = time;
 	}
 
 }
